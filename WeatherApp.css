@@ -1,0 +1,128 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.formContainer {
+  background: #2a2d35;
+  padding: 90px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 9px #040405;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+input#city:hover {
+  box-shadow: 1px 0px 7px white;
+  transform: scale(1.03);
+  transition: transform 1s linear;
+}
+
+input#city {
+  height: 40px;
+  width: 240px;
+  border-radius: 10px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+}
+
+input[type="submit"] {
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  box-shadow: 1px 0px 8px #fffefe;
+}
+
+form.WeatherForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+input {
+  margin-left: 16px;
+}
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  border-top: 1.6px solid #ff6f61;
+  border-bottom: 1.6px solid #ff6f61;
+}
+
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  background: #000000e6;
+  color: white;
+}
+
+.weatherDataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #2b2f3d;
+  width: 50vw;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 20px 0px;
+  display: none;
+}
+.weatherDataMainContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.weatherInfor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderMainContainer {
+  display: none;
+}
+
+.LoaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  display: none;
+}
+img#WeatherImg {
+  transform: scale(1.5);
+}
+
+
+/* animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

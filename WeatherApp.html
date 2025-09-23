@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./WeatherApp.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <!-- <div class="NewsDataMainContainer">
+        <div class="NewDataContainer">
+          <div class="WeatherDataHeading">
+            <h2>Weather Data</h2>
+          </div>
+          
+        </div>
+      </div> -->
+      
+
+      <div class="takeWeatherDetailsFromUserMainContainer">
+            <div class="takeWeatherDetailsFromUserContainer">
+                 <div class="formContainer">
+                    <h3 id="formHeading">Enter Weather Details </h3>
+                    <form action="" class="WeatherForm" id="weatherForm">
+                       <label for="city">City <input type="text" name="city" id="city" placeholder="Enter city" class="input" /></label><br/>
+                        <label for="">Do you want AQI :</label> <br/>
+                        <label for="AQIyes">Yes <input type="radio" name="AQI" id="AQIyes" value="yes" class="input"></label>
+                         <label for="AQIno">No<input type="radio" name="AQI" id="AQIno" value="no" class="input"></label>
+                         <input type="submit" id="submit">
+                    </form>
+                 </div>
+            </div>
+      </div>
+
+      <div class="LoaderContainer">
+        <div class="loader">
+
+        </div>
+            <p>Loading Data please wait....</p>
+        </div>    
+        <div class="loaderMainContainer">
+        
+        <div class="weatherDataContainer">
+
+          <div class="WeatherLocation">
+            <p class="location">Location: <span id="locationValue"></span></p>
+          </div>
+          <div class="weatherInfor">
+            <p class="weatherInfoPara">
+              Weather Condition : <span id="locationConditionValue"></span>
+            </p>
+            <img alt="weatherSymbol" id="WeatherImg">
+          </div>
+          <div class="AQIInfo">
+            <div class="AQI" id="AQIStatus">
+              <br class="AQIStatusCO">AQI Status : </br> Co : <span id="AQICOValue"> </span></p> 
+              <p class="AQIStatusno2">no2 :
+              <span id="AQIno2Value"> </span></p>
+               <p class="AQIStatuso3"> po3 :
+              <span id="AQIo3Value"> </span></p> 
+              <p class="AQIStatuspm2_5">
+                 pm2_5 :
+              <span id="AQIpm2_5Value"> </span>
+              </p>
+              <p class="AQIStatuspm10">
+                pm10 :
+              <span id="AQIpm10Value">  </span>
+              </p>
+             
+            </div>
+          </div>
+          <div class="WindSpeedInfoContainer">
+            <p class="windSpeedinfo">
+              Wind Speed : <span id="WindSpeedValue"> </span>KMPH
+            </p>
+          </div>
+          <div class="lastUpdatedInfoContainer">
+            <p class="lastUpdatedInfoContainer">
+              Last Updated : <span id="lastUpdatedInfoValue"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./WeatherApp.js"></script>
+  </body>
+</html>
