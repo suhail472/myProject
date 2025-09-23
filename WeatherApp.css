@@ -17,7 +17,6 @@
 
 input#city:hover {
   box-shadow: 1px 0px 7px white;
-  transform: scale(1.03);
   transition: transform 1s linear;
 }
 
