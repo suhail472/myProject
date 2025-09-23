@@ -24,12 +24,12 @@ input.forEach((element)=>{
             city="Srinagar";
           }
           console.log(city);
-          Wurl=`http://api.weatherapi.com/v1/current.json?key=7fc38ad17afd4cffa4a62824252309&q=${city}&aqi=${enableAqi}`;
+          Wurl=`https://api.weatherapi.com/v1/current.json?key=7fc38ad17afd4cffa4a62824252309&q=${city}&aqi=${enableAqi}`;
           console.log("Updated URL is : ",Wurl);
         }else
           {
             city=event.target.value;
-            Wurl=`http://api.weatherapi.com/v1/current.json?key=7fc38ad17afd4cffa4a62824252309&q=${city}&aqi=${enableAqi}`;
+            Wurl=`https://api.weatherapi.com/v1/current.json?key=7fc38ad17afd4cffa4a62824252309&q=${city}&aqi=${enableAqi}`;
             console.log("Updated URL is : ",Wurl);
           }
       })
