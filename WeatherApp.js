@@ -116,7 +116,7 @@ function displayLoader(){
 form.addEventListener('submit',(event)=>{
   event.preventDefault();
   UserDetailsContainer.style.display="none";
-  loader.style.display="block";
+  loader.style.display="flex";
 
   displayLoader();
 })
