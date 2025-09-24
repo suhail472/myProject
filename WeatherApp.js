@@ -59,9 +59,11 @@ function FetchNews(FearchDFL, msg) {
 async function FetchNewsAndWeatherData() {
   let locationStat = document.querySelector("#locationValue");
   let weatherInfo = document.querySelector("#locationConditionValue");
+  let AQIStatus = document.querySelector(".AQIStatusValue");
   let AQICOValue = document.querySelector("#AQICOValue");
   let AQIno2Value = document.querySelector("#AQIno2Value");
   let AQIo3Value = document.querySelector("#AQIo3Value");
+
   let AQIpm2_5Value = document.querySelector("#AQIpm2_5Value");
   let AQIpm10Value = document.querySelector("#AQIpm10Value");
   let last_updated = document.getElementById("#lastUpdatedInfo");
@@ -79,26 +81,62 @@ async function FetchNewsAndWeatherData() {
     console.log("Data:", result);
     locationStat.textContent =
       result[1]["value"]["location"]["name"] +
-      " " +
+      ", " +
       result[1]["value"]["location"]["region"] +
-      " " +
+      ", " +
       result[1]["value"]["location"]["country"];
     weatherInfo.textContent =
       result[1]["value"]["current"]["condition"]["text"];
     windSpeed.textContent = result[1]["value"]["current"]["wind_kph"] + " ";
-    AQICOValue.textContent = result[1]["value"]["current"]["air_quality"]["co"];
-    AQIno2Value.textContent =
-      result[1]["value"]["current"]["air_quality"]["no2"];
-    AQIo3Value.textContent = result[1]["value"]["current"]["air_quality"]["o3"];
-    AQIpm2_5Value.textContent =
-      result[1]["value"]["current"]["air_quality"]["pm2_5"];
-    AQIpm10Value.textContent =
-      result[1]["value"]["current"]["air_quality"]["pm10"];
+    let Co,no2,o3,pm2_5,pm10;
+    
+    Co=result[1]["value"]["current"]["air_quality"]["co"];
+
+    AQICOValue.textContent = Co;
+   
+    no2=result[1]["value"]["current"]["air_quality"]["no2"];
+    AQIno2Value.textContent =no2
+    o3=result[1]["value"]["current"]["air_quality"]["o3"];
+    AQIo3Value.textContent = o3;
+    pm2_5=result[1]["value"]["current"]["air_quality"]["pm2_5"];
+    AQIpm2_5Value.textContent =pm2_5;
+    pm10=result[1]["value"]["current"]["air_quality"]["pm10"];
+    AQIpm10Value.textContent =pm10;
     let ImgSrc = result[1]["value"]["current"]["condition"]["icon"];
     console.log(ImgSrc);
     console.log(WeatherImage);
     WeatherImage.setAttribute("src", ImgSrc);
     last_updated.textContent = result[1]["value"]["current"]["last_updated"];
+
+    let status = "safe1";
+
+    if (
+      Co > 100 ||
+      no2 > 360 ||
+      o3 > 168 ||
+      pm2_5 > 90 ||
+      pm10 > 250
+    ){
+      status = "high risk";
+    } else if (
+      Co > 50 ||
+      no2 > 100 ||
+      o3 > 100 ||
+      pm2_5 > 60 ||
+      pm10 > 100
+    ) {
+      status = "risk";
+    } else if (
+      Co > 10 ||
+      no2 > 53 ||
+      o3 > 50 ||
+      pm2_5 > 30 ||
+      pm10 > 50
+    ) {
+      status = "moderate";
+    }
+      console.log(AQIStatus)
+      AQIStatus.textContent=status;
   } else {
   }
 }
