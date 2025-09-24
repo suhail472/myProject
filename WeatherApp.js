@@ -49,9 +49,11 @@ function FetchNews(FearchDFL, msg) {
         location.reload();
       })
       .finally(() => {
-        loader.style.display = "none";
-        weatherDataHolder.style.display = "flex";
-        WDataContainer.style.display = "flex";
+        setTimeout(() => {
+          loader.style.display = "none";
+          weatherDataHolder.style.display = "flex";
+          WDataContainer.style.display = "flex";
+        }, 1000);
       });
   });
 }
@@ -88,20 +90,20 @@ async function FetchNewsAndWeatherData() {
     weatherInfo.textContent =
       result[1]["value"]["current"]["condition"]["text"];
     windSpeed.textContent = result[1]["value"]["current"]["wind_kph"] + " ";
-    let Co,no2,o3,pm2_5,pm10;
-    
-    Co=result[1]["value"]["current"]["air_quality"]["co"];
+    let Co, no2, o3, pm2_5, pm10;
+
+    Co = result[1]["value"]["current"]["air_quality"]["co"];
 
     AQICOValue.textContent = Co;
-   
-    no2=result[1]["value"]["current"]["air_quality"]["no2"];
-    AQIno2Value.textContent =no2
-    o3=result[1]["value"]["current"]["air_quality"]["o3"];
+
+    no2 = result[1]["value"]["current"]["air_quality"]["no2"];
+    AQIno2Value.textContent = no2;
+    o3 = result[1]["value"]["current"]["air_quality"]["o3"];
     AQIo3Value.textContent = o3;
-    pm2_5=result[1]["value"]["current"]["air_quality"]["pm2_5"];
-    AQIpm2_5Value.textContent =pm2_5;
-    pm10=result[1]["value"]["current"]["air_quality"]["pm10"];
-    AQIpm10Value.textContent =pm10;
+    pm2_5 = result[1]["value"]["current"]["air_quality"]["pm2_5"];
+    AQIpm2_5Value.textContent = pm2_5;
+    pm10 = result[1]["value"]["current"]["air_quality"]["pm10"];
+    AQIpm10Value.textContent = pm10;
     let ImgSrc = result[1]["value"]["current"]["condition"]["icon"];
     console.log(ImgSrc);
     console.log(WeatherImage);
@@ -110,33 +112,15 @@ async function FetchNewsAndWeatherData() {
 
     let status = "safe1";
 
-    if (
-      Co > 100 ||
-      no2 > 360 ||
-      o3 > 168 ||
-      pm2_5 > 90 ||
-      pm10 > 250
-    ){
+    if (Co > 100 || no2 > 360 || o3 > 168 || pm2_5 > 90 || pm10 > 250) {
       status = "high risk";
-    } else if (
-      Co > 50 ||
-      no2 > 100 ||
-      o3 > 100 ||
-      pm2_5 > 60 ||
-      pm10 > 100
-    ) {
+    } else if (Co > 50 || no2 > 100 || o3 > 100 || pm2_5 > 60 || pm10 > 100) {
       status = "risk";
-    } else if (
-      Co > 10 ||
-      no2 > 53 ||
-      o3 > 50 ||
-      pm2_5 > 30 ||
-      pm10 > 50
-    ) {
+    } else if (Co > 10 || no2 > 53 || o3 > 50 || pm2_5 > 30 || pm10 > 50) {
       status = "moderate";
     }
-      console.log(AQIStatus)
-      AQIStatus.textContent=status;
+    console.log(AQIStatus);
+    AQIStatus.textContent = status;
   } else {
   }
 }

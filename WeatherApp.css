@@ -54,6 +54,7 @@ form.WeatherForm {
 input {
   margin-left: 16px;
 }
+
 .loader {
   width: 50px;
   height: 50px;
@@ -101,6 +102,7 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .loaderMainContainer {
@@ -108,18 +110,54 @@ input {
 }
 
 .LoaderContainer {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 15px;
-  display: none;
+  gap: 20px;
+  backdrop-filter: brightness(0.5);
+  padding: 50px;
+  border: 1px solid transparent;
+  border-radius: 19px;
 }
 img#WeatherImg {
   transform: scale(1.5);
 }
+h1.WeatherHeading {
+  font-size: 30px;
+  font-weight: 600;
+  animation: moving 1.9s infinite alternate linear;
+  border-bottom: 2px solid red;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+  h3#formHeading {
+    font-size: 22px;
+}
 
+.WeatherDataHeadingContainer {
+  border-bottom: 1px solid;
+  border-radius: 5px;
+  padding: 05px 12px;
+}
+.WeatherDataHeadingContainer {
+  width: 100px;
+  height: 100px;
+  border: 4px solid transparent;
+  border-top: 4px solid #00f; /* Top border visible */
+  border-radius: 50%;
+  animation: spinOutline 2s linear infinite;
+}
 /* animations */
+@keyframes moving {
+  0% {
+    /* transform: translatex(30px); */
+  }
+  100% {
+    transform: translatex(50px);
+    
+  }
+}
 @keyframes spin {
   from {
     transform: rotate(0deg);
