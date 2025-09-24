@@ -3,18 +3,20 @@
   padding: 0px;
 }
 .formContainer {
+  font-family: monospace;
   background: #2a2d35;
   padding: 35px 82px;
   border-radius: 20px;
-  box-shadow: 1px 1px 9px #040405;
+  box-shadow: 1px 1px 9px #ffe8b2;
   font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 50px;
+  background: transparent;
+  backdrop-filter: blur(2px) brightness(0.8);
 }
-
 input#city:hover {
   box-shadow: 1px 0px 7px white;
   transition: transform 1s linear;
@@ -70,6 +72,7 @@ input {
   flex-direction: column;
   background: #000000e6;
   color: white;
+  background: url(https://th.bing.com/th/id/R.6a7a745…?rik=xULJFzGntGDtew&riu=http%3a%2f%2fwonderfulengineering.com%2fwp-content%2fuploads%2f2016%2f01%2fnature-wallpapers-38.jpg&ehk=dUtU7hvI%2bIv1ZAogg0%2b%2fznLW5KEYTsPob9LlywpnX1Q%3d&risl=&pid=ImgRaw&r=0);
 }
 
 .weatherDataContainer {
@@ -77,11 +80,12 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #2b2f3d;
+  background: transparent;
   width: 50vw;
   gap: 20px;
   border-radius: 10px;
   padding: 20px 0px;
+  backdrop-filter: blur(2px) brightness(0.5);
   display: none;
 }
 .weatherDataMainContainer {
