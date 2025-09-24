@@ -4,7 +4,7 @@
 }
 .formContainer {
   background: #2a2d35;
-  padding: 90px;
+  padding: 35px 82px;
   border-radius: 20px;
   box-shadow: 1px 1px 9px #040405;
   font-size: 20px;
@@ -114,7 +114,6 @@ input {
 img#WeatherImg {
   transform: scale(1.5);
 }
-
 
 /* animations */
 @keyframes spin {

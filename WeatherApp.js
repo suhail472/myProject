@@ -48,7 +48,7 @@ function FetchNews(FearchDFL, msg) {
         resolve(LinkData, msg);
       })
       .catch((err) => {
-        console.log(err);
+        console.log("Error : "+err);
       });
   });
 }
