@@ -1,5 +1,5 @@
 let city;
-let enableAqi = false;
+let enableAqi = true;
 let Wurl;
 let loader = document.querySelector(".LoaderContainer");
 let weatherDataHolder = document.querySelector(".loaderMainContainer");
