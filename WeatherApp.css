@@ -210,9 +210,9 @@ h1.WeatherHeading {
 }
 
 .WindSpeedImageContainer {
-  border-bottom: 1px solid;
+  
   border-radius: 10px;
-  border-top: 1px solid;
+  
   width: 100px;
   display: flex;
   align-items: center;
