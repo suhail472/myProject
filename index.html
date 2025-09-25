@@ -28,10 +28,16 @@
                    <h1 class="WeatherHeading">Weather Information</h1>
                     <h3 id="formHeading">Enter Weather Details </h3>
                     <form action="" class="WeatherForm" id="weatherForm">
-                       <label for="city">City <input type="text" name="city" id="city" placeholder="Enter city" class="input" /></label><br/>
-                        <label for="">Do you want AQI :</label> <br/>
-                        <label for="AQIyes">Yes <input type="radio" name="AQI" id="AQIyes" value="yes" class="input"></label>
-                         <label for="AQIno">No<input type="radio" name="AQI" id="AQIno" value="no" class="input"></label>
+                      <div class="CityInputLabelContainer">
+                      <label for="city">City </label><input type="text" name="city" id="city" placeholder="Enter city" class="input formInput" /><br/>
+                      </div> 
+                       <div class="radiobuttonholder"> 
+                       <label for="">Do you want AQI :</label> <br/>
+                        <div class="radioActualButtons">
+                        <label for="AQIyes">Yes<input type="radio" name="AQI" id="AQIyes" value="yes" class="inputRadio formInput"></label>
+                        <label for="AQIno">No<input type="radio" name="AQI" id="AQIno" value="no" class="inputRadio formInput"></label>
+                        </div>
+                      </div>
                          <input type="submit" id="submit">
                     </form>
                  </div>
@@ -42,7 +48,7 @@
         <div class="loader">
 
         </div>
-            <p>Loading Data please wait....</p>
+            <p class="loaderPara">Loading Data please wait....</p>
         </div>    
         <div class="loaderMainContainer">
         
@@ -61,7 +67,7 @@
           </div>
           <div class="AQIInfo">
             <div class="AQI" id="AQIStatus">
-              <br class="AQIStatusCO">AQI Status : <span class="AQIStatusValue"></span> </br> Co : <span id="AQICOValue"> </span></p> 
+              <br class="AQIStatusCO"> AQI Status : <span class="AQIStatusValue"></span> </br> Co : <span id="AQICOValue"> </span></p> 
               <p class="AQIStatusno2">no2 :
               <span id="AQIno2Value"> </span></p>
                <p class="AQIStatuso3"> po3 :
@@ -78,8 +84,11 @@
             </div>
           </div>
           <div class="WindSpeedInfoContainer">
+            <div class="WindSpeedImageContainer">
+              <img class="WindSpeedImageIcon" src="./Icons/windIcon2.png" alt="WindIcon">
+            </div>
             <p class="windSpeedinfo">
-              Wind Speed : <span id="WindSpeedValue"> </span>KMPH
+              Wind Speed : <span id="WindSpeedValue"> </span> KMPH
             </p>
           </div>
             <div class="lastUpdateInfoContainer">
